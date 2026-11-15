@@ -1,0 +1,59 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Environment and credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# DuckDB temporary / WAL / database files
+*.duckdb
+*.duckdb.wal
+*.wal
+*.tmp
+*.temp
+*.bak
+
+# Logs
+*.log
+logs/
+
+# Compressed files
+*.gz
+*.zip
+*.tar
+*.tar.gz

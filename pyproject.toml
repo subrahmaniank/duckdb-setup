@@ -1,0 +1,10 @@
+[project]
+name = "duckdb-setup"
+version = "1.0.0"
+description = "Ready-to-use sample database package for DuckDB: AdventureWorks DW, AdventureWorks OLTP, DVD Rental, FSI Demo"
+authors = [{ name = "Subra" }]
+dependencies = [
+    "duckdb>=1.0.0",
+    "pandas>=2.0.0",
+]
+requires-python = ">=3.9"
