@@ -6,6 +6,7 @@ A comprehensive, production-ready suite of sample databases built for [DuckDB](h
 2. **AdventureWorks Data Warehouse** (`adventureworks_dw`) - Star schema data warehouse with 29 tables (Fact & Dimension tables, 1,000,000+ records).
 3. **DVD Rental** (`dvdrental`) - The standard PostgreSQL sample database with 15 tables.
 4. **FSI Demo** (`fsi_demo` / `sei_demo`) - Financial Services Industry investment portfolio, asset pricing, and transaction history database (640,000+ records).
+5. **Auto Finance** (`auto_finance`) - Synthetic loan originations, dealers, monthly performance, payments, collections, and add-on products.
 
 ---
 
@@ -88,7 +89,7 @@ uv pip install -r requirements.txt
 
 ### 2. Deploy All Databases
 
-To build all 4 databases simultaneously:
+To build all 5 databases simultaneously:
 
 **PowerShell (Windows):**
 ```powershell
@@ -129,6 +130,7 @@ python deploy_all.py --databases "adventureworks_oltp,adventureworks_dw"
 | **FSI Demo** | `main`, `public` | 8 | 642,443 | `fsi_demo/fsi_demo.duckdb` (alias: `sei_demo.duckdb`) |
 | **AdventureWorks DW** | `main`, `public` | 29 | 1,061,940 | `adventureworks_dw/adventureworks_dw.duckdb` |
 | **AdventureWorks OLTP** | `person`, `humanresources`, `production`, `purchasing`, `sales` | 68 | 614,849 | `adventureworks_oltp/adventureworks_oltp.duckdb` (alias: `adventureworks.duckdb`) |
+| **Auto Finance** | `lending` | 7 | 1,034,484 | `auto_finance/auto_finance.duckdb` |
 
 All databases load and validate in seconds thanks to DuckDB's vectorized query engine and columnar storage format.
 

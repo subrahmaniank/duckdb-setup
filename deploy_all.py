@@ -6,6 +6,7 @@ Master deployment script for all DuckDB sample databases:
 - AdventureWorks OLTP (adventureworks_oltp)
 - DVD Rental (dvdrental)
 - FSI Demo (fsi_demo)
+- Auto Finance (auto_finance)
 
 Usage:
     python deploy_all.py
@@ -38,6 +39,11 @@ DATABASES = {
         "display_name": "FSI Demo (Financial Services)",
         "folder": "fsi_demo",
         "output_file": "fsi_demo.duckdb",
+    },
+    "auto_finance": {
+        "display_name": "Auto Finance (Synthetic)",
+        "folder": "auto_finance",
+        "output_file": "auto_finance.duckdb",
     },
 }
 
@@ -91,7 +97,7 @@ def deploy_all(selected_dbs=None):
             mod = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(mod)
 
-            exit_code = mod.build_database()
+            exit_code = mod.build_database(force=True) if k == "auto_finance" else mod.build_database()
             duration_sec = time.time() - db_start
             duration_str = f"{int(duration_sec // 60):02d}:{int(duration_sec % 60):02d}"
 
